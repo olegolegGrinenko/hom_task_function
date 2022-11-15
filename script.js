@@ -62,41 +62,15 @@ if (userAge === 0 && userAge <= 1) {
 
 //Task 3 Людина вводить годину([0-23]), ви виводите привітання
 const hour = Number(prompt("Write a hour : "));
-if (hour === 7 ||
-  hour === 8 ||
-  hour === 9 || 
-  hour === 10 
-) {
+if (hour >= 7 && hour <= 10) {
   console.log("good morning");
-} else if (
-  hour === 11 ||
-  hour === 12 ||
-  hour === 13 ||
-  hour === 14 ||
-  hour === 15 ||
-  hour === 16 ||
-  hour === 17
-) {
+} else if (hour >= 11 && hour <= 17) {
   console.log("good day");
-} else if (
-  hour === 18 ||
-  hour === 19 ||
-  hour === 20 ||
-  hour === 21 ||
-  hour === 22
-) {
+} else if (hour >= 18 && hour <= 23) {
   console.log("good evening");
-} else if (
-  hour === 0 ||
-  hour === 1 ||
-  hour === 2 ||
-  hour === 3 ||
-  hour === 4 ||
-  hour === 5 ||
-  hour === 6
-) {
+} else if (hour >= 0 && hour <= 6) {
   console.log("good night");
-} else  {
+} else {
   console.log("404 try again");
 }
 
