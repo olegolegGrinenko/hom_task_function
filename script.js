@@ -1,28 +1,51 @@
-// Запитувати у користувача число до тих пір, доки воно не буде більше 15 і менше 35 і кратне 6 (18,24,30 підходить). В користувача є 3 спроби,зробити двома способами через while і for. * це повинна бути функція(можливо і не одна).
+/*Написати функцію, яка запитує в користувача число з діапазону до тих пір, доки він його не введе
+функція брудна, приймає початок і кінець діапазону, а повертає виключно коректне число числового типу!!!!!! */
 
-//Variant 1
-let count = 0;
-while (true) {
-  const result = Number(prompt("enter number "));
-  count++;
-  if (count > 3) {
-    console.log("error");
-    break;
+const enterNumber = function () {
+  while (true) {
+    //const num = prompt("enter number from 5 to 10");
+    if (isNaN(Number(num)) || num === null || num === "" || num === " ") {
+      console.log("error");
+      continue;
+    }
+    if (Number(num >= 5 && Number(num <= 10)));
+    {
+      console.log(num);
+      return;
+    }
   }
-  if (result > 15 && result < 35 && result % 6 === 0) {
-    console.log("welcome");
-    break;
-  } else {
-    console.log("try again");
-  }
-}
-console.log(count);
+};
+console.log(enterNumber());
 
-//variant #2
-for (let i = 0; i < 4; i++) {
-  const result = Number(prompt("enter number"));
-  if (result > 15 && result < 35 && result % 6 === 0) {
-    console.log("welcome");
-    break;
+//Написати скрипт, який виводить числа (числа повинні бути парними і кратними 9) з діапазону від 0 до 100 у зворотньому порядку.
+//(* - це повинна бути функція)
+
+const count = function (START, END) {
+  START = 0;
+  END = 100;
+  for (let i = END; i >= START; i--) {
+    if (i % 2 === 0 && i % 9 === 0) {
+      console.log(i);
+    }
   }
+};
+console.log(count());
+
+/*Створити функцію конструктор, яка описує користувача:
+-ім'я
+-прізвище
+-вік
+- метод, який логує ім'я та прізвище разом */
+
+function UserInfo(name, surname, age, fullName) {
+  this.name = name;
+  this.surname = surname;
+  this.age = age;
+  this.fullName = function () {
+    console.log(this.name + this.surname);
+  };
 }
+
+const userInfo = new UserInfo("Oleg", "Grinenko", 24, "Oleg", "Grinenko");
+console.log(userInfo);
+userInfo.fullName();
